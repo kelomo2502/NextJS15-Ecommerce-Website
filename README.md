@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amazon Clone - Full-Stack E-commerce Application 🚀
 
-## Getting Started
+This project is a full-stack Amazon-like e-commerce application built using Next.js 15, with a focus on mastering modern web development technologies. The application replicates core features of a real-world e-commerce platform, providing an end-to-end shopping experience, including user authentication, product browsing, cart management, checkout, and payment integration.
 
-First, run the development server:
+## Features 🌟
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### User Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- User Authentication:
+  - Secure sign-up, sign-in, and sign-out using NextAuth.js with credentials provider.
+- Product Management:
+  - Dynamic product listings, categories, and detailed product pages.
+- Shopping Cart:
+  - Add, update, and remove products from the cart.
+- Checkout Process:
+  - Secure checkout with payment integration using Stripe.
+- Wishlist and Saved Items:
+  - Save items for future purchase.
+- Order Management:
+  - Track orders and their statuses.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Admin Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Manage product inventory, including adding, editing, and deleting products.
+- View and manage orders and their statuses.
+- Monitor sales and customer data (planned feature).
 
-## Learn More
+## Tech Stack 🛠️
 
-To learn more about Next.js, take a look at the following resources:
+| **Layer**       | **Technology**                     |
+|------------------|------------------------------------|
+| **Frontend**     | Next.js 15, React, Tailwind CSS    |
+| **Backend**      | Next.js API Routes (App Router)    |
+| **Database**     | PostgreSQL, Prisma ORM            |
+| **Authentication** | NextAuth.js                     |
+| **Payments**     | Stripe                            |
+| **DevOps**       | Docker, GitHub Actions            |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure 📂
 
-## Deploy on Vercel
+![Folder Structure](./public/images/folder_structure.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Run Locally
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Clone this repository:
+`https://github.com/kelomo2502/NextJS15-Ecommerce-Website.git`
+2. Navigate to the project directory
+`cd NextJS15-Ecommerce-Website`
+3. Install dependencies:
+`npm install`
+4. Set up environment variables: Create a .env file in the root with the following keys:
+STRIPE_SECRET_KEY=add_your_stripe_secret
+DATABASE_URL=Add_your_database_url
+JWT_SECRET=Add_your_jwt_secret
+5. Apply Prisma migrations to set up the database:
+`npx prisma migrate dev`
+6. Run the development server:
+`npm run dev`
+7. Access the app at <http://localhost:3000>
+
+## Planned Improvements
+
+- Add product reviews and ratings.
+- Implement search and filtering functionality.
+- Improve mobile responsiveness.
+- Add advanced analytics for the admin panel.
+
+## Usage 🖱️
+
+### User Features
+
+1. Sign Up / Log In: Navigate to /auth/register or /auth/login to create an account or log in.
+2. Browse Products: Explore products on the homepage or search by category.
+3. Manage Cart: Add products to the cart and proceed to checkout.
+4. Wishlist: Save products for later.
+5. Checkout: Complete your purchase with Stripe integration.
+
+### Admin Features
+
+1. Visit /admin for the admin panel (work in progress).
+
+## Deployment 🚀
+
+Comming soon
+
+## Contributing 🤝
+
+Contributions are welcome! Please follow these steps:
+
+- Fork the repository.
+- Create a new branch (git checkout -b feature/YourFeature).
+- Commit your changes (git commit -m 'Add YourFeature').
+- Push to the branch (git push origin feature/YourFeature).
+- Open a pull request.
+
+## Planned Features 🚧
+
+- Product reviews and ratings.
+- Search and filtering functionality.
+- Admin analytics dashboard.
+- Advanced mobile responsiveness.
+- Push notifications for order updates.
+
+## License 📜
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgements 🙌
+
+- Next.js for the powerful framework.
+- Prisma for database management.
+- Stripe for payment processing.
+- Tailwind CSS for styling.
+- Inspired by the real-world functionality of Amazon.
