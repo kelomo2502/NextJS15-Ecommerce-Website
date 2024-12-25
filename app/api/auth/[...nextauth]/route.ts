@@ -42,6 +42,7 @@
 
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { signOut } from "next-auth/react";
 
 export const authOptions = {
   providers: [
@@ -60,7 +61,9 @@ export const authOptions = {
   ],
   pages: {
     signIn: "/auth/login", // Use your custom login page
+    signOut: "/auth/logout", // Use your custom signout page
   },
+
 };
 
 const handler = NextAuth(authOptions);

@@ -67,20 +67,6 @@ JWT_SECRET=Add_your_jwt_secret
 - Improve mobile responsiveness.
 - Add advanced analytics for the admin panel.
 
-## Usage 🖱️
-
-### User Features
-
-1. Sign Up / Log In: Navigate to /auth/register or /auth/login to create an account or log in.
-2. Browse Products: Explore products on the homepage or search by category.
-3. Manage Cart: Add products to the cart and proceed to checkout.
-4. Wishlist: Save products for later.
-5. Checkout: Complete your purchase with Stripe integration.
-
-### Admin Features
-
-1. Visit /admin for the admin panel (work in progress).
-
 ## Deployment 🚀
 
 Comming soon
@@ -114,3 +100,4 @@ This project is licensed under the [MIT License](LICENSE).
 - Stripe for payment processing.
 - Tailwind CSS for styling.
 - Inspired by the real-world functionality of Amazon.
+- Postgresql

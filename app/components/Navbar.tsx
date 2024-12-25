@@ -1,41 +1,32 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 
-const Navbar: React.FC = () => {
-  const router = useRouter();
-  const [isAuthenticated, setIsAuthenticated] = useState(false); // Replace with actual auth logic
-
-  const handleSignOut = () => {
-    // Add actual sign-out logic (e.g., API call or next-auth signOut())
-    setIsAuthenticated(false);
-    router.push('/');
-  };
+export default function Navbar() {
+  const { data: session } = useSession();
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-gray-800 text-white">
-      <h1 className="text-lg font-bold cursor-pointer" onClick={() => router.push('/')}>
-        Amazon Clone
-      </h1>
+    <nav className="flex justify-between p-4 bg-blue-500 text-white">
       <div>
-        {isAuthenticated ? (
-          <button onClick={handleSignOut} className="text-red-500">
-            Sign Out
-          </button>
+        <Link href="/">Home</Link>
+      </div>
+      <div>
+        {session ? (
+          <>
+            <span className="mr-4">Hello, {session.user?.name}</span>
+            <button
+              onClick={() => signOut({ redirect: true, callbackUrl: "/" })}
+              className="px-4 py-2 bg-red-500 rounded hover:bg-red-600"
+            >
+              Logout
+            </button>
+          </>
         ) : (
-          <div className="flex gap-4">
-            <button onClick={() => router.push('/auth/login')} className="text-blue-400">
-              Sign In
-            </button>
-            <button onClick={() => router.push('/auth/register')} className="text-blue-400">
-              Register
-            </button>
-          </div>
+          <Link href="/auth/login">Login</Link>
         )}
       </div>
+      <button><Link href={"/auth/register"}>Register</Link></button>
     </nav>
   );
-};
-
-export default Navbar;
+}
