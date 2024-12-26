@@ -5,7 +5,7 @@ import { signOut, useSession } from "next-auth/react";
 
 export default function Navbar() {
   const { data: session } = useSession();
-
+console.log(session)
   return (
     <nav className="flex justify-between p-4 bg-blue-500 text-white">
       <div>
@@ -26,7 +26,7 @@ export default function Navbar() {
           <Link href="/auth/login">Login</Link>
         )}
       </div>
-      <button><Link href={"/auth/register"}>Register</Link></button>
+      {!session && <button><Link href={"/auth/register"}>Register</Link></button>}
     </nav>
   );
 }
